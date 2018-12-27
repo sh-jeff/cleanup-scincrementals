@@ -18,10 +18,10 @@
 .PARAMETER Silent
     Supress Output. Defaults to "False"
 .EXAMPLE
-    .\Cleanup-SCIncrementals -Path "D:\Backups\SERVER" -RetentionDays 30
+    .\Cleanup-SCIncrementals -BackupPath "D:\Backups\SERVER" -RetentionDays 30
     Report on all images that are older than 30 days.
 
-    .\Cleanup-SCIncrementals -Path "D:\Backups\Server" -DryRun $false
+    .\Cleanup-SCIncrementals -BackupPath "D:\Backups\Server" -DryRun $false
     Report and delete all images that are older than 60 days.
 #>
 #requires -Version 5.1
