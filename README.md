@@ -26,6 +26,7 @@ this is untested.
    * Enter `-ExecutionPolicy Bypass` followed by the full path to the
    script (EG C:\scripts\cleanup\cleanup-scincrementals.ps1)
    followed by `-BackupPath "D:\Backups\Server" -DryRun $false -Silent`
+   * Optionally set `-RetentionDays` to something other than 60.
 5. Set "Run wheter user is logged on or not"
 6. Click save enter the password for the user account.
 7. Repeat for each server. One task per managed folder. It is suggested to 
