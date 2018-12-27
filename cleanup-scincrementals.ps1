@@ -7,7 +7,7 @@
     will clean them up with a configurable amount of time.
 
     Default retention time is 60 days.
-.PARAMETER Path
+.PARAMETER BackupPath
     Location of the backup store. It will search for a folder named 
     "Incrementals" in this folder.
 .PARAMETER RetentionDays
