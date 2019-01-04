@@ -15,8 +15,9 @@ The -DryRun $false switch must be passed in order to actually delete files.
 -RetentionDays "90" -DryRun $false -Silent`   
 This will delete any SPI files more than 90 days old.
 ## Setup
-WMF 5.1 must be installed. It may work with PoSH versions as low as 3.0, but
-this is untested.  
+WMF 5.1 should be installed. It may work with PoSH versions as low as 3.0, but
+this is untested. Powershell 2.0 (Windows 7) is known to not work.
+Powershell 4.0 (Server 2012 R2) has been tested and verified working.
 1. Copy script to local disk.
 2. Create a new task
    * The task name should be "SCCleanup - Servername"

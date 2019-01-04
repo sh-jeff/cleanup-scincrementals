@@ -24,7 +24,7 @@
     .\Cleanup-SCIncrementals -BackupPath "D:\Backups\Server" -DryRun $false
     Report and delete all images that are older than 60 days.
 #>
-#requires -Version 5.1
+#requires -Version 4.0
 
 Param(
     [Parameter(ValueFromPipeline)]
