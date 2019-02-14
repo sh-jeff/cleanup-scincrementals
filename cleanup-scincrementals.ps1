@@ -7,7 +7,7 @@
     will clean them up with a configurable amount of time.
 
     Default retention time is 60 days.
-.PARAMETER Path
+.PARAMETER BackupPath
     Location of the backup store. It will search for a folder named 
     "Incrementals" in this folder.
 .PARAMETER RetentionDays
@@ -24,7 +24,7 @@
     .\Cleanup-SCIncrementals -BackupPath "D:\Backups\Server" -DryRun $false
     Report and delete all images that are older than 60 days.
 #>
-#requires -Version 5.1
+#requires -Version 4.0
 
 Param(
     [Parameter(ValueFromPipeline)]
@@ -35,7 +35,7 @@ Param(
 )
 
 Function CollectFiles {
-    # Get our .SPI files. ---TODO: Also clean up related files
+    # Get our .SPI files. 
     $Files = (
         Get-ChildItem $BackupPath\Incrementals -Filter "*.SPI" | 
         Sort-Object -Property LastWriteTime
@@ -64,7 +64,7 @@ Function CollectFiles {
 				# If the file does fall within $RetentionDays, get all of the 
 				# files with the same name (without extension).
                 $file_base = $file -replace "\.[^\.]+$"
-                $cleanup_file = gci $BackupPath\Incrementals -Filter $file_base*
+                $cleanup_file = Get-ChildItem $BackupPath\Incrementals -Filter $file_base*
                 $cleanuplist += $cleanup_file.FullName
         }
     }
